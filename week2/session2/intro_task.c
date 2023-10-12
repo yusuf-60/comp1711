@@ -12,6 +12,7 @@ int main(){
 
     total=num1+num2;
     printf("your total is %d \n",total);
+    
     return 0;    
 }
 
