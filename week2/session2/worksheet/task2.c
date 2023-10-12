@@ -1,4 +1,5 @@
 #include <stdio.h>
+//guess a number with fancy ifs
 
 int main(){
     int user=0 ;
@@ -12,6 +13,8 @@ int main(){
             printf("your number is too low!! \n");
         }
     }
+
     printf("congratulations you have guessed the number correctly!!!😱😱 \n");
+    
     return 0;
 }
