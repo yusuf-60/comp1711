@@ -16,14 +16,14 @@ typedef struct {
 // This is your helper function. Do not change it in any way.
 // Inputs: character array representing a row; the delimiter character
 // Ouputs: date character array; time character array; steps character array
-void tokeniseRecord(const char *input, const char *delimiter,
-                    char *date, char *time, char *steps) {
+void tokeniseRecord(const char *input, const char *delimiter, char *date, char *time, char *steps) {
     // Create a copy of the input string as strtok modifies the string
     char *inputCopy = strdup(input);
     
     // Tokenize the copied string
     char *token = strtok(inputCopy, delimiter);
-    if (token != NULL) {        strcpy(date, token);
+    if (token != NULL) {        
+        strcpy(date, token);
     }
     
     token = strtok(NULL, delimiter);
@@ -43,6 +43,17 @@ void tokeniseRecord(const char *input, const char *delimiter,
 
 // Complete the main function
 int main() {
+    FITNESS_DATA Fitness[150];
+    int buffer = 250;
+    char line[buffer];
+    int counter = 0;
 
+    FILE *file = fopen("FitnessData_2023.csv" , "r");
+
+    
+    while (fgets( buffer, 200 , file)){
+        printf("%s" , buffer);
+    }
+    fclose(file);
 
 }

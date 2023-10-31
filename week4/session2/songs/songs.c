@@ -76,8 +76,8 @@ int main()
     char artist[100];
     char title[100];
     char year[4];
-
-    while (fgets(line, buffer_size, input)) // to read evertything out the file
+    int a = 0;
+    while (fgets(line, buffer_size, input)) // to read everything out the file
     {   
         // first we will get the info from the line
         tokeniseRecord(line,",",pos,artist,title,year);
@@ -92,5 +92,13 @@ int main()
 
     //count how many total songs you read in
     printf("total songs is %d\n",counter);
+
+    for (a;a<3;a++){
+        printf("the artist is : %s", songs[a].artist);
+        printf("the title is : %s",songs[a].title);
+        printf("/""%s",songs[a].year);
+        printf("/""%d\n",songs[a].position);
+
+    }   
 
 }
