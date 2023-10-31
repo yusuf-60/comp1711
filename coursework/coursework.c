@@ -48,11 +48,22 @@ int main() {
     char line[buffer];
     int counter = 0;
 
+    // opening the file, so that we can read into it
     FILE *file = fopen("FitnessData_2023.csv" , "r");
 
-    
-    while (fgets( buffer, 200 , file)){
-        printf("%s" , buffer);
+    //creating temporary storage for the data
+    char date[11];
+    char time[6];
+    int steps[100];
+    int count; 
+
+    while (fgets( line, buffer , file)){
+        tokeniseRecord(line,",",date,time,steps);
+
+        strcpy(Fitness[counter].date,date);
+        strcpy(Fitness[counter].time,time);
+        strcpy(Fitness[counter].steps,steps);
+        counter++;
     }
     fclose(file);
 

@@ -63,8 +63,8 @@ void tokeniseRecord(const char *input, const char *delimiter, char *pos, char *a
 
 int main()
 {
-    SONG_DATA songs[100]; // making an array of 100 song_data structs in an array called songs
-    int buffer_size = 250; // numbers just need lots of space and its fine 
+    SONG_DATA songs[1000]; // making an array of 100 song_data structs in an array called songs
+    int buffer_size = 2500; // numbers just need lots of space and its fine 
     char line[buffer_size]; // 
     int counter=0;
 
@@ -72,10 +72,10 @@ int main()
 
     // creating some temporary storage:
     // pos will be converted to an int, but we'll be getting it as a string
-    char pos[4];
-    char artist[100];
-    char title[100];
-    char year[4];
+    char pos[40];
+    char artist[1000];
+    char title[1000];
+    char year[40];
     int a = 0;
     while (fgets(line, buffer_size, input)) // to read everything out the file
     {   
@@ -94,11 +94,10 @@ int main()
     printf("total songs is %d\n",counter);
 
     for (a;a<3;a++){
-        printf("the artist is : %s", songs[a].artist);
+        printf("the artist is : %s" , songs[a].artist);
         printf("the title is : %s",songs[a].title);
         printf("/""%s",songs[a].year);
         printf("/""%d\n",songs[a].position);
-
     }   
-
+    fclose(input);
 }
